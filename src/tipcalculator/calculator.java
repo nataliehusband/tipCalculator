@@ -14,9 +14,9 @@ import javafx.scene.control.TextField;
 public class calculator 
 {
 	private final static NumberFormat currency = NumberFormat.getCurrencyInstance(); 
-	private final static NumberFormat percent = NumberFormat.getPercentInstance(); 
-	 
+	private final static NumberFormat percent = NumberFormat.getPercentInstance();
 	private BigDecimal tipPercentage = new BigDecimal(0.15); 
+	
 	@FXML
 	private TextField amountTextField; 
 	@FXML
@@ -47,9 +47,8 @@ public class calculator
 						tipPercentage = BigDecimal.valueOf(newValue.intValue()/100.0); 
 						tipPercentageLabel.setText(percent.format(tipPercentage)); 
 					}
-				});
-	}
-	
+				});	
+	}	
 	private void figureTotal()
 	{
 		try
