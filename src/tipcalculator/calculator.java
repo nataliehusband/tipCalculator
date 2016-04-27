@@ -15,7 +15,7 @@ public class calculator
 {
 	private final static NumberFormat currency = NumberFormat.getCurrencyInstance(); 
 	private final static NumberFormat percent = NumberFormat.getPercentInstance(); 
-	@FXML 
+	 
 	private BigDecimal tipPercentage = new BigDecimal(0.15); 
 	@FXML
 	private TextField amountTextField; 
@@ -34,7 +34,7 @@ public class calculator
 		figureTotal(); 
 	}
 	
-	public void Initialize()
+	public void initialize()
 	{
 		currency.setRoundingMode(RoundingMode.HALF_UP);
 		
@@ -46,7 +46,6 @@ public class calculator
 					{
 						tipPercentage = BigDecimal.valueOf(newValue.intValue()/100.0); 
 						tipPercentageLabel.setText(percent.format(tipPercentage)); 
-						System.out.println("fml");
 					}
 				});
 	}
