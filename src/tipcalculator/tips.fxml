@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
@@ -7,11 +8,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tipcalculator.calculator">
    <center>
-      <GridPane prefHeight="188.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="188.0" prefWidth="294.0" vgap="25.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="119.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="175.0" />
@@ -28,8 +31,6 @@
             <Label contentDisplay="CENTER" text="Cost of Meal:" GridPane.rowIndex="1" />
             <Label contentDisplay="CENTER" text="Total Amount: " GridPane.rowIndex="4" />
             <TextField fx:id="amountTextField" promptText="Type Cost Here" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label contentDisplay="CENTER" text="Tip Calculator" />
-            <Button mnemonicParsing="false" onAction="#calculateButtonPressed" text="Calculate Tip" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="totalTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Slider fx:id="tipPercentageSlider" blockIncrement="1.0" max="30.0" min="5.0" value="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="tipPercentageLabel" text="5%" GridPane.rowIndex="2" />
@@ -38,4 +39,21 @@
          </children>
       </GridPane>
    </center>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" />
+   </padding>
+   <top>
+      <Pane prefHeight="29.0" prefWidth="294.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="75.0" layoutY="7.0" text="Tip Calculator">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#calculateButtonPressed" text="Calculate Tip" BorderPane.alignment="CENTER" />
+   </bottom>
 </BorderPane>
